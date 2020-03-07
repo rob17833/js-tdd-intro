@@ -41,3 +41,35 @@ Assertion example:
 	assert.strictEqual(typeof concatStr, 'function', 'Should be a function');
 	assert.strictEqual(concatStr.length, 2, 'Should takes 2 arguments');
 	assert.strictEqual(concatStr('a', 'b'), 'ab');
+
+There's several test runners (test frameworks) available:
+	Jasmine
+	Mocha
+	Jest
+They're all delivered by default with  Create React App ...
+
+Let's go ahead:
+IN ORDER TO STAY ORGANIZED, IT'S A GOOD PRACTICE NOT TO MIX THE ASSERTIONS(TEST) AND
+THE CODE TO BE TESTED ITSELF !
+
+So let's create a folder 'test' and a new file with the name of the fonction to be tested like capitalizeFirstLetters.test.js (extension for Mocha and Jest)
+
+cut the test code (assertions) from the file that contains the function and pass it
+into the new file we'have just created
+
+at the end of the function file add module.exports = the name of the function
+
+in the new file add a new line to retrieve the function to be tested by defining
+a new variable with the name of the function which has : required(the relative path of the function file).
+
+ok now it's better organized...
+
+now just create a package JSON by using npm init --yes at the root of the main folder
+then install mocha by typing >>
+npm install --save-dev mocha at the root of the main folder
+
+now we need to customize our package.json >>> and replace the key test value by 'mocha'
+so we'll be able to launch the test by using this command: npm test(the key!)
+
+
+
