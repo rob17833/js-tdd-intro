@@ -1,0 +1,43 @@
+***TDD Introduction***
+
+What the heck is TDD? >>> Test Driven Development !
+
+Développement piloté par les tests) est une méthodologie de développement logiciel, visant à améliorer la qualité et la robustesse du code produit.
+
+TDD can be used for all programing languages !
+
+***But how does it work?***
+Before writing code we first write the test.
+This approach already makes it possible to ask questions!
+	what am I looking to do?
+	what the code is supposed to do?
+	how is this code called?
+In this way, writing a test allows to document the code
+After having written the test, we write the minimal code allowing to pass the test
+Having written the test first encourages writing only the code strictly necessary to meet the initial need.
+
+Une fois que le code permet de faire passer le test, on peut :
+•
+
+Le refactorer, c'est-à-dire changer son fonctionnement interne, sans changer la façon dont il est appelé ni le résultat qu'il renvoie. Le refactoring peut viser l'amélioration de la structure du code et/ou de ses performances. Si le test passe toujours après refactoring, c'est que celui-ci a été bien fait.
+•
+
+Réfléchir à une fonctionnalité supplémentaire : on va alors écrire un nouveau test, puis implémenter la fonctionnalité. Il est nécessaire que le nouveau test et le précédent passent après l'implémentation. Si le nouveau test passe, mais plus l'ancien, il s'agit d'une régression : on a "cassé" la fonctionnalité précédente en implémentant la nouvelle.
+
+Les assertions peuvent être utilisées dans d'autres contextes que pour les tests, mais sont à la base de ces derniers : un test consiste essentiellement à écrire des assertions, qui vérifient que le code testé est conforme aux attentes.
+
+Assertion example:
+	const assert = require('assert');
+	assert.equal(Math.max(1, 5, 9), 9);
+	the first argument is the result we get, the second argument is the result expected
+	If these two values are different assert() will provide a value error however
+	it doesn't controle the type
+	If you want to controle the type as well you must use assert.strictEqual()
+
+	another useful feature of assert() is assert.notEqual() which will return an
+	error if the two values ARE EQUALS !
+
+	example:
+	assert.strictEqual(typeof concatStr, 'function', 'Should be a function');
+	assert.strictEqual(concatStr.length, 2, 'Should takes 2 arguments');
+	assert.strictEqual(concatStr('a', 'b'), 'ab');
